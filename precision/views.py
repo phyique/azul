@@ -11,6 +11,13 @@ def bad_request(request):
     return response
 
 
+# HHTP Error 500
+def internal_server(request):
+    response = render_to_response('precision/404.html', context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
+
+
 def index(request):
     template = loader.get_template('precision/index.html')
     return HttpResponse(template.render(request))
@@ -50,4 +57,8 @@ def faq(request):
     template = loader.get_template('precision/faq.html')
     return HttpResponse(template.render(request))
 
+
+def error_page(request):
+    template = loader.get_template('precision/404.html')
+    return HttpResponse(template.render(request))
 

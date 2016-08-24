@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^contact/', views.contact, name='contact'),
     url(r'^pricing/', views.pricing, name='pricing'),
     url(r'^portfolio/', views.portfolio, name='portfolio'),
+    url(r'^404/', views.error_page, name='404'),
 ]
