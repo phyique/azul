@@ -39,13 +39,9 @@ def contact(request):
 
 
 def portfolio(request):
-    template = loader.get_template('precision/portfolio-3-col.html')
+    template = loader.get_template('precision/portfolio.html')
     return HttpResponse(template.render(request))
 
-
-def portfolio_item(request):
-    template = loader.get_template('precision/portfolio-item.html')
-    return HttpResponse(template.render(request))
 
 
 def pricing(request):

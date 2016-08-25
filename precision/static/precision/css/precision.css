@@ -183,3 +183,17 @@ header .header-col {
 .portfolio {
     background-color: #E9E8EB;
 }
+
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.navbar-brand>img {
+  padding: 7px 15px;
+}

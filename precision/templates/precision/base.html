@@ -12,7 +12,7 @@
     <meta name="author" content="">
 
     <title>{% block title %} Title Page {% endblock %} Precision Graphics</title>
-    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="{% static 'precision/images/favicon.ico' %}" />
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="{% static 'precision/images/favicon.ico' %}"/>
     {# loading static files #}
     {% block head_content %} {% endblock %}
     <!-- Bootstrap Core CSS -->
@@ -35,170 +35,105 @@
 
 <body>
 
-    <header>
-         <div>
-                   <div class="container">
-                       <div class="row">
-                            <div class="header-col col-md-8" >
-                                <a href="{% url 'precision:index'%}"><img src="{% static 'precision/images/precision-header.png' %}" alt="" class="img-responsive"></a>
-                            </div>
-                           <div id="custom-search-input" class="header-col input-group col-md-4" >
-                               <input type="text" class="form-control input-md" placeholder ="search"/>
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info btn-md" type="button">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                   </div>
-         </div>
-    </header>
 
-    <!-- /.header --->
-
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-precision navbar-static-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            {#<a class="navbar-brand" href="{% url 'precision:index' %}">Start Bootstrap</a>#}
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav navbar-left">
-
-
-
-                    <li><a class="scheme" href="{% url 'precision:index'%}"> Home</a> </li>
-
-                    <li>
-                        <a class="scheme" href="{% url 'precision:about' %}"> About</a>
-                    </li>
-                    <li>
-                        <a class="scheme" href="{% url 'precision:services' %}">Services</a>
-                    </li>
-                    <li>
-                        <a class="scheme" href="{% url 'precision:contact' %}">Gallery</a>
-                    </li>
-                    <li><a class="scheme" href="{% url 'precision:portfolio' %}">Quote</a></li>
-{% comment %}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quote <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{% url 'precision:portfolio' %}">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{% url 'precision:faq' %}">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'precision:pricing' %}">Pricing Table</a>
-                            </li>
-                        </ul>
-                    </li>
-{% endcomment %}
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="scheme" href="{% url 'precision:contact' %}">Contact</a></li>
-                </ul>
-
-            </div>
-            <!-- /.navbar-collapse -->
+<!-- Navigation -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'precision:index'%}"><img src="{% static 'precision/images/favicon-96.png' %}"
+                                                           alt="navbar-brand"></a>
         </div>
-        <!-- /.container -->
-    </nav>
-    {# Abstracting page content #}
+        <div class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'precision:index'%}">Home</a></li>
+                <li><a href="{% url 'precision:about' %}">About</a></li>
+                <li><a href="{% url 'precision:services' %}">Services</a></li>
+                <li><a href="{% url 'precision:portfolio' %}">Gallery</a></li>
+                <li><a href="{% url 'precision:pricing' %}">Quote</a></li>
+                <li><a href="{% url 'precision:contact' %}">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+{% block body_content %}{% endblock %}
 
 
-    {% block body_content %}{% endblock %}
+<!-- Footer -->
+<footer>
 
+    <div class=" footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <img src="{% static 'precision/images/favicon-114.png' %}" class="img-responsive">
+                    <h1>PRECISION GRAPHICS SUCCESSORS LIMITED</h1>
 
-        <!-- Footer -->
-    <footer>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cupiditate
+                        ducimus eligendi excepturi id, incidunt ipsam iste laudantium modi nam omnis placeat quos
+                        sapiente, sint tenetur ullam vero voluptates.</p>
 
-               <div class=" footer-above">
-                   <div class="container">
-                       <div class="row">
-                   <div class="footer-col col-md-4">
-                       <img src="{% static 'precision/images/favicon-114.png' %}" class="img-responsive">
-                       <h1>PRECISION GRAPHICS SUCCESSORS LIMITED</h1>
-
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cupiditate
-                           ducimus eligendi excepturi id, incidunt ipsam iste laudantium modi nam omnis placeat quos
-                           sapiente, sint tenetur ullam vero voluptates.</p>
-
-                   </div>
-                   <div class="col-md-4">
-                       <h3>Contact</h3>
-                       <p><i class="fa fa-home fa-2x"></i> 10 Cassia Park Ave, Kingston 10</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact</h3>
+                    <p><i class="fa fa-home fa-2x"></i> 10 Cassia Park Ave, Kingston 10</p>
                     <p><i class="fa fa-phone fa-2x"></i>
-                    <abbr title="Phone">P</abbr>: (876) 758-5371 or (876) 758-8217</p>
+                        <abbr title="Phone">P</abbr>: (876) 758-5371 or (876) 758-8217</p>
                     <p><i class="fa fa-envelope-o fa-2x"></i>
-                    <abbr title="Email">E</abbr>: <a href="mailto:precisiongraphicsja@gmail.com">precisiongraphicsja@gmail.com</a>
+                        <abbr title="Email">E</abbr>: <a href="mailto:precisiongraphicsja@gmail.com">precisiongraphicsja@gmail.com</a>
                     </p>
                     <p><i class="fa fa-clock-o fa-2x"></i>
-                    <abbr title="Hours">H</abbr>: Monday - Friday: 8:30 AM to 5:00 PM</p>
-                   </div>
-                   <div class="col-md-4">
-                       <h3>About Us</h3>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eum, eveniet. Assumenda at
-                           commodi cumque dolore, doloremque fugit ipsum labore laborum neque nihil nobis officia
-                           provident quod sapiente vitae voluptatem.</p>
-                       <h4 style="color: #000;">Follow Us</h4>
-                       <ul class="list-inline">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter fa-3x"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
-                            </li>
-                        </ul>
+                        <abbr title="Hours">H</abbr>: Monday - Friday: 8:30 AM to 5:00 PM</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eum, eveniet. Assumenda at
+                        commodi cumque dolore, doloremque fugit ipsum labore laborum neque nihil nobis officia
+                        provident quod sapiente vitae voluptatem.</p>
+                    <h4 style="color: #000;">Follow Us</h4>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+                        </li>
+                    </ul>
 
 
-                    </div>
-                   </div>
-                   </div>
-               </div>
-               <div class="footer-below">
-                   <div class="container">
-                       <div class="row">
-                            <div class="col-lg-12" >
-                                <p style="text-align: center; color: white">Copyright &copy; Precision Graphics (Succs) Limited 2016</p>
-                            </div>
-                        </div>
-                   </div>
-               </div>
-           </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="text-align: center; color: white">Copyright &copy; Precision Graphics (Succs) Limited
+                        2016</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
+<!-- jQuery -->
+<script src="{% static 'precision/js/jquery.js' %}"></script>
 
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'precision/js/bootstrap.min.js' %}"></script>
 
-            <!-- jQuery -->
-    <script src="{% static 'precision/js/jquery.js' %}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'precision/js/bootstrap.min.js' %}"></script>
-
-    {% block script_content %}{% endblock %}
+{% block script_content %}{% endblock %}
 
 </body>
 
