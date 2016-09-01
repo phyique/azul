@@ -71,6 +71,7 @@ body {
 
 .navbar {
     margin-bottom: 0;
+
 }
 
 .navbar-precision{
@@ -196,4 +197,14 @@ header .header-col {
 
 .navbar-brand>img {
   padding: 7px 15px;
+}
+
+
+#pageheader{
+    color: #4A90E2;
+}
+
+
+#about{
+    margin-bottom: 30px;
 }

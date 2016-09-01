@@ -11,8 +11,8 @@ Contact
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Contact
-                    <small>Subheading</small>
+                <h1 id="pageheader" class="page-header">Contact
+
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="{% url 'precision:index' %}">Home</a>
@@ -32,7 +32,7 @@ Contact
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4">
-                <h3>Contact Details</h3>
+                <h3 id="pageheader">Contact Details</h3>
                 <p>
                     10 Cassia Park Avenue<br>Kingston 10<br>
                     Jamaica
@@ -45,20 +45,6 @@ Contact
                 </p>
                 <p><i class="fa fa-clock-o"></i>
                     <abbr title="Hours">H</abbr>: Monday - Friday: 8:30 AM to 5:00 PM</p>
-                <ul class="list-unstyled list-inline list-social-icons">
-                    <li>
-                        <a href="#">Facebook<i class="fa fa-facebook-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#">LinkedIn<i class="fa fa-linkedin-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#">Twitter<i class="fa fa-twitter-square fa-2x"></i></a>
-                    </li>
-                    <li>
-                        <a href="#">GooglePlus<i class="fa fa-google-plus-square fa-2x"></i></a>
-                    </li>
-                </ul>
             </div>
         </div>
         <!-- /.row -->
@@ -67,7 +53,7 @@ Contact
         <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
         <div class="row">
             <div class="col-md-8">
-                <h3>Send us a Message</h3>
+                <h3 id='pageheader' >Send us a Message</h3>
                 <form name="sentMessage" id="contactForm" novalidate>
                     <div class="control-group form-group">
                         <div class="controls">
