@@ -1,5 +1,6 @@
 {% load staticfiles %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,19 +53,19 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'precision:index' %}">Home</a></li>
-                <li class="dropdown">
+                <li {% block active %}{% endblock %}><a href="{% url 'precision:index' %}">Home</a></li>
+                <li {% block active1 %}{% endblock %} class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="{% url 'precision:about' %}">About Us</a>
                         </li>
                         <li>
-                            <a href="{% url 'precision:about' %}">Career</a>
+                            <a href="{% url 'precision:career' %}">Career</a>
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li {% block active2 %}{% endblock %} class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products & Services <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -74,11 +75,11 @@
                             <a href="{% url 'precision:portfolio' %}">Gallery</a>
                         </li>
                         <li>
-                            <a href="{% url 'precision:contact' %}">Quote</a>
+                            <a href="{% url 'precision:pricing' %}">Quote</a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="{% url 'precision:contact' %}">Contact</a></li>
+                <li {% block active3 %}{% endblock %}><a href="{% url 'precision:contact' %}">Contact</a></li>
 
 
             </ul>
@@ -99,9 +100,9 @@
                     <img src="{% static 'precision/images/favicon-114.png' %}" class="img-responsive">
                     <h1>PRECISION GRAPHICS SUCCESSORS LIMITED</h1>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cupiditate
+                    <p><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cupiditate
                         ducimus eligendi excepturi id, incidunt ipsam iste laudantium modi nam omnis placeat quos
-                        sapiente, sint tenetur ullam vero voluptates.</p>
+                        sapiente, sint tenetur ullam vero voluptates.</i></p>
 
                 </div>
                 <div class="col-md-4">
@@ -117,9 +118,9 @@
                 </div>
                 <div class="col-md-4">
                     <h3>About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eum, eveniet. Assumenda at
-                        commodi cumque dolore, doloremque fugit ipsum labore laborum neque nihil nobis officia
-                        provident quod sapiente vitae voluptatem.</p>
+                    <p>Precision Graphics (Succs) Ltd provides Printers, Lithographers, Graphic Designers, Annual
+                        Report, Brochures, Calendars, Company Newsletter, Labels, Letterheads, Magazines and General
+                        Stationery.</p>
                     <h4 style="color: #000;">Follow Us</h4>
                     <ul class="list-inline">
                         <li>

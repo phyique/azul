@@ -19,6 +19,8 @@ def internal_server(request):
 
 
 def index(request):
+    context={}
+    context["home"] = "active"
     template = loader.get_template('precision/index.html')
     return HttpResponse(template.render(request))
 
@@ -51,6 +53,11 @@ def pricing(request):
 
 def faq(request):
     template = loader.get_template('precision/faq.html')
+    return HttpResponse(template.render(request))
+
+
+def career(request):
+    template = loader.get_template('precision/career.html')
     return HttpResponse(template.render(request))
 
 

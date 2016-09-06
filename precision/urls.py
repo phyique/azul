@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+
 app_name = 'precision'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -9,6 +10,7 @@ urlpatterns = [
     url(r'^faq/', views.faq, name='faq'),
     url(r'^services/', views.services, name='services'),
     url(r'^contact/', views.contact, name='contact'),
+    url(r'^career/', views.career, name='career'),
     url(r'^pricing/', views.pricing, name='pricing'),
     url(r'^portfolio/', views.portfolio, name='portfolio'),
     url(r'^404/', views.error_page, name='404'),

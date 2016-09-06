@@ -5,6 +5,8 @@
     About
 {% endblock %}
 
+{% block active1 %} class="active"{% endblock %}
+
 {% block body_content %}
     <div class="container">
 
@@ -24,7 +26,7 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                <img class="img-responsive" src="{% static 'precision/images/machine.jpg' %}" alt="">
             </div>
             <div class="col-md-6">
                 <h2 id='pageheader'>About Us</h2>
