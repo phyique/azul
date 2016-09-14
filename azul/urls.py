@@ -16,9 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-handler404 = 'precision.views.bad_request'
-handler500 = 'precision.views.internal_server'
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('precision.urls')),

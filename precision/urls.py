@@ -2,8 +2,8 @@ from django.conf.urls import url
 
 from . import views
 
-
 app_name = 'precision'
+
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^about/', views.about, name='about'),
@@ -11,7 +11,12 @@ urlpatterns = [
     url(r'^services/', views.services, name='services'),
     url(r'^contact/', views.contact, name='contact'),
     url(r'^career/', views.career, name='career'),
-    url(r'^pricing/', views.pricing, name='pricing'),
+    url(r'^quote/', views.quote, name='quote'),
+    url(r'^upload/', views.upload, name='upload'),
     url(r'^portfolio/', views.portfolio, name='portfolio'),
-    url(r'^404/', views.error_page, name='404'),
 ]
+
+
+handler404 = 'views.error_page'
+
+handler500 = 'views.internal_server'

@@ -12,15 +12,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %} Title Page {% endblock %} Precision Graphics</title>
+    <title>{% block title %} Title Page {% endblock %}| Precision Graphics</title>
     <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="{% static 'precision/images/favicon.ico' %}"/>
     {# loading static files #}
-    {% block head_content %} {% endblock %}
+
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'precision/css/bootstrap.css' %}" rel="stylesheet">
 
+
+
     <!-- Custom CSS -->
     <link href="{% static 'precision/css/precision.css' %}" rel="stylesheet">
+    {% block head_content %} {% endblock %}
 
     <!-- Custom Fonts -->
     <link href="{% static 'precision/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -69,13 +72,13 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products & Services <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{% url 'precision:services' %}">Services</a>
+                            <a href="{% url 'precision:services' %}">Products & Services</a>
                         </li>
                         <li>
-                            <a href="{% url 'precision:portfolio' %}">Gallery</a>
+                            <a href="{% url 'precision:quote' %}">Request a Quote</a>
                         </li>
                         <li>
-                            <a href="{% url 'precision:pricing' %}">Quote</a>
+                            <a href="{% url 'precision:upload' %}">Upload a File</a>
                         </li>
                     </ul>
                 </li>
@@ -100,9 +103,7 @@
                     <img src="{% static 'precision/images/favicon-114.png' %}" class="img-responsive">
                     <h1>PRECISION GRAPHICS SUCCESSORS LIMITED</h1>
 
-                    <p><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur cupiditate
-                        ducimus eligendi excepturi id, incidunt ipsam iste laudantium modi nam omnis placeat quos
-                        sapiente, sint tenetur ullam vero voluptates.</i></p>
+                    <p><i>For the best quality printing, at the lowest cost.</i></p>
 
                 </div>
                 <div class="col-md-4">

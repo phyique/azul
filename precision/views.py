@@ -6,14 +6,15 @@ from django.template import loader, RequestContext
 
 # HTTP Error 404
 def bad_request(request):
-    response = render_to_response('precision/404.html', context_instance=RequestContext(request))
+    response = render_to_response('404.html', context_instance=RequestContext(request))
     response.status_code = 404
     return response
-
+    # template = loader.get_template('precision/404.html')
+    # return HttpResponse(template.render(request))
 
 # HHTP Error 500
 def internal_server(request):
-    response = render_to_response('precision/404.html', context_instance=RequestContext(request))
+    response = render_to_response('500.html', context_instance=RequestContext(request))
     response.status_code = 500
     return response
 
@@ -45,9 +46,13 @@ def portfolio(request):
     return HttpResponse(template.render(request))
 
 
+def quote(request):
+    template = loader.get_template('precision/quote.html')
+    return HttpResponse(template.render(request))
 
-def pricing(request):
-    template = loader.get_template('precision/pricing.html')
+
+def upload(request):
+    template = loader.get_template('precision/upload.html')
     return HttpResponse(template.render(request))
 
 
