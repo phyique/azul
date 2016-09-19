@@ -66,7 +66,3 @@ def career(request):
     return HttpResponse(template.render(request))
 
 
-def error_page(request):
-    template = loader.get_template('precision/404.html')
-    return HttpResponse(template.render(request))
-

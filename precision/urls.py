@@ -17,6 +17,4 @@ urlpatterns = [
 ]
 
 
-handler404 = 'views.error_page'
 
-handler500 = 'views.internal_server'
