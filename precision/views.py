@@ -65,4 +65,3 @@ def career(request):
     template = loader.get_template('precision/career.html')
     return HttpResponse(template.render(request))
 
-
