@@ -1,7 +1,12 @@
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, RequestContext
+from .forms import UploadFileForm, handle_uploaded_file
+from django.core.files.storage import FileSystemStorage
+
+
 # Create your views here.
+
 
 
 # HTTP Error 404
@@ -12,6 +17,7 @@ def bad_request(request):
     # template = loader.get_template('precision/404.html')
     # return HttpResponse(template.render(request))
 
+
 # HHTP Error 500
 def internal_server(request):
     response = render_to_response('500.html', context_instance=RequestContext(request))
@@ -20,7 +26,7 @@ def internal_server(request):
 
 
 def index(request):
-    context={}
+    context = {}
     context["home"] = "active"
     template = loader.get_template('precision/index.html')
     return HttpResponse(template.render(request))
@@ -51,11 +57,6 @@ def quote(request):
     return HttpResponse(template.render(request))
 
 
-def upload(request):
-    template = loader.get_template('precision/upload.html')
-    return HttpResponse(template.render(request))
-
-
 def faq(request):
     template = loader.get_template('precision/faq.html')
     return HttpResponse(template.render(request))
@@ -65,3 +66,21 @@ def career(request):
     template = loader.get_template('precision/career.html')
     return HttpResponse(template.render(request))
 
+
+def upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'precision/upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, "precision/upload.html")
+    #     form = UploadFileForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         handle_uploaded_file(request.FILES['file'])
+    #         return HttpResponseRedirect('precision/index.html')
+    # else:
+    #     form = UploadFileForm()
+    # return render(request, 'precision/upload.html', {'form': form})

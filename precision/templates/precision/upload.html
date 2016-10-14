@@ -28,31 +28,47 @@
         </div>
         <!-- /.row -->
 
+        <p>Please upload the file for your print project.</p>
+
         <!-- Content Row -->
-        <form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-group">
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="form-group">
-                            <label for="">First Name:</label>
-                            <input type="text" class="form-control" placeholder="First Name">
+                            <label for="">Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter Your Full Name">
                         </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Company:</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address:</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" \>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Company:</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1"
-                                   >
-                        </div>
+                        <label for="exampleInputPassword1">Phone Number:</label>
+                        <input type="tel" class="form-control" id="exampleInputPassword1">
+                    </div>
+
                     </div>
                 </div>
 
             </div>
+            <div class="form-group">
+                <label for="exampleInputFile">Select File</label>
+                <input type="file" name = 'myfile' id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
 
-                    <div class="row">
+            </div>
+
+            <div class="row">
             <div class="col-xs-8">
                 <div class="control-group form-group">
                     <div class="controls">
@@ -67,12 +83,7 @@
             </div>
         </div>
 
-            <div class="form-group">
-                <label for="exampleInputFile">Select File</label>
-                <input type="file" id="exampleInputFile">
-                <p class="help-block">Example block-level help text here.</p>
 
-            </div>
 
             <div class="form-group">
                 <div class="form-inline">
@@ -103,6 +114,9 @@
         </form>
         <!-- /.row -->
 
+        {% if uploaded_file_url %}
+         <p>File uploaded at: <a href="{{ uploaded_file_url }}"> {{ uploaded_file_url }}</a></p>
+        {% endif %}
         <hr>
 
     </div>
