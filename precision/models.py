@@ -20,3 +20,7 @@ class Contact(models.Model):
     message = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class Upload(models.Model):
+    full_Name = models.CharField(max_length=255, blank=True)

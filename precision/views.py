@@ -97,12 +97,21 @@ def career(request):
 
 def upload(request):
     if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
+        form = UploadFileForm(request.POST, request.FILES)
+
         if form.is_valid():
             form.save()
-            return redirect('index.html')
-        else:
-            form = DocumentForm()
-        return render(request, 'precision/upload.html', {
-            'form':form
-        })
+
+            subject, from_email, to = form.cleaned_data['full_Name'], 'precisiongraphicsja@gmail.com', form.cleaned_data['email']
+            html_content = '<p>This is an <strong>important</strong> message.</p>'
+            msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
+            msg.content_subtype = 'html'
+            # msg.attach_alternative(html_content, "text/html")
+            msg.send()
+
+            return redirect('/')
+
+    else:
+        form = ContactModelForm()
+
+    return render(request, 'precision/upload.html', {'form': form})
