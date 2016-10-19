@@ -1,10 +1,10 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, RequestContext
-from .forms import UploadFileForm, handle_uploaded_file
+from .forms import *
 from django.core.files.storage import FileSystemStorage
-
-
+from django.shortcuts import redirect
+from django.core.mail import send_mail, EmailMultiAlternatives
 # Create your views here.
 
 
@@ -43,8 +43,25 @@ def about(request):
 
 
 def contact(request):
-    template = loader.get_template('precision/contact.html')
-    return HttpResponse(template.render(request))
+    if request.method == 'POST':
+        form = ContactModelForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+            subject, from_email, to = form.cleaned_data['full_Name'], 'precisiongraphicsja@gmail.com', form.cleaned_data['email']
+            html_content = '<p>This is an <strong>important</strong> message.</p>'
+            msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
+            msg.content_subtype = 'html'
+            # msg.attach_alternative(html_content, "text/html")
+            msg.send()
+
+            return redirect('/')
+
+    else:
+        form = ContactModelForm()
+
+    return render(request, 'precision/contact.html', {'form': form})
 
 
 def portfolio(request):
@@ -67,20 +84,25 @@ def career(request):
     return HttpResponse(template.render(request))
 
 
+# def upload(request):
+#     if request.method == 'POST' and request.FILES['myfile']:
+#         myfile = request.FILES['myfile']
+#         fs = FileSystemStorage()
+#         filename = fs.save(myfile.name, myfile)
+#         uploaded_file_url = fs.url(filename)
+#         return render(request, 'precision/upload.html', {
+#             'uploaded_file_url': uploaded_file_url
+#         })
+#     return render(request, "precision/upload.html")
+
 def upload(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index.html')
+        else:
+            form = DocumentForm()
         return render(request, 'precision/upload.html', {
-            'uploaded_file_url': uploaded_file_url
+            'form':form
         })
-    return render(request, "precision/upload.html")
-    #     form = UploadFileForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         handle_uploaded_file(request.FILES['file'])
-    #         return HttpResponseRedirect('precision/index.html')
-    # else:
-    #     form = UploadFileForm()
-    # return render(request, 'precision/upload.html', {'form': form})

@@ -1,7 +1,6 @@
 # Precision Graphics (Succs) Ltd
 
-**This is a webpage for a lithographic printing business webpage.**
-
+***For the best quality printing, at the lowest cost.***
 
 #  About
 Precision Graphics (Succs) Ltd provides Printers, Lithographers, Graphic Designers, Annual Report, Brochures, Calendars, 
@@ -25,7 +24,6 @@ Fax 	876-758-5637
 # URL
 
 [precisiongraphicsjam.com](http://precisiongraphicsjam.com)
-
 
 
  

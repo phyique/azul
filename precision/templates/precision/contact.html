@@ -55,35 +55,42 @@ Contact
         <div class="row">
             <div class="col-md-4">
                 <h3 id='pageheader' >Send us a Message</h3>
-                <form name="sentMessage" id="contactForm">
+                <form method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
                     <div class="control-group form-group">
                         <div class="controls">
-                            <label>Full Name:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+
+                            {{ form.full_Name.label_tag }}
+                             {{ form.full_Name }}
+
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Phone Number:</label>
-                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            {{ form.phone_Number }}
+
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Email Address:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            {{ form.email }}
+
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Message:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            {{ form.message }}
+
                         </div>
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
                     <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
 
