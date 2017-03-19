@@ -19,7 +19,7 @@ Address: 10 Cassia Pk Av Kingston 10 Jamaica
 
 Phone numbers: 876-758-5371	| 876-758-8217	
 
-Fax 	876-758-5637	
+Fax: 	876-758-5637	
 
 # URL
 

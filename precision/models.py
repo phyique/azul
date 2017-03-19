@@ -24,3 +24,19 @@ class Contact(models.Model):
 
 class Upload(models.Model):
     full_Name = models.CharField(max_length=255, blank=True)
+
+class User(models.Model):
+    user_id = models.IntegerField(primary_key=True)
+    fname = models.CharField(max_length= 20)
+    lname = models.CharField(max_length=25)
+
+
+class Address(models.Model):
+    dir_id = models.IntegerField(primary_key=True)
+    address = models.CharField(max_length=40)
+    email = models.EmailField(max_length=255)
+
+
+class Directory(models.Model):
+    user_id = models.ForeignKey('User', on_delete=models.CASCADE)
+    dir_id = models.ForeignKey('Address', on_delete=models.CASCADE)

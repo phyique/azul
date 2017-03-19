@@ -17,18 +17,19 @@ class UploadFileForm(forms.Form):
         fields = ('full_Name')
 
 
-
 class ContactModelForm(forms.ModelForm):
     message = forms.CharField(
         label='Message',
         max_length=255,
         widget=forms.Textarea(attrs={'class':'form-control'})
     )
+
     full_Name = forms.CharField(
         label='Full Name',
         max_length=30,
         widget=forms.TextInput(attrs={'class': 'form-control'}),
     )
+
     email = forms.EmailField(
         label='Email',
         max_length=30,
