@@ -24,7 +24,7 @@
         $("html").addClass("retina");
     }
 })();
-
+//global
 /*! GLOBAL.VARS */
 var ocomltxt = [];
 ocomltxt.en = {
